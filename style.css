@@ -1,0 +1,218 @@
+.body {
+    font-family: 'Open Sans',sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F5F0E1;
+    color: #4b3c2d;
+    line-height: 1.6;
+}
+.video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;      
+      filter: blur(8px);     
+      z-index: -1;            
+    }
+
+.h2 {
+    font-family: 'Merriweather',serif;
+    margin-top: 1.5em;
+}
+.header {
+    background: #6e532b;
+    text-align: center;
+}
+.header h1 {
+    color: white;
+}
+.header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: rgb(157, 236, 177);
+    background-color: #6e532b;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(98, 145, 89, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 5;
+}
+.overlay-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+.overlay-menu li {
+    margin: 20px 0;
+}
+.overlay-menu li a {
+    color: rgb(248, 248, 248);
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+#menu-toggle {
+    display: none;
+}
+#menu-toggle:checked ~ .overlay {
+    height: 100%;
+    opacity: 1;
+    visibility: visible;
+}
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+.nav-links li a{
+    color: white;
+    text-decoration: none;
+}
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    background-color: rgb(157, 236, 177);
+    display: block;
+}
+.hero {
+    background-image: url("images/IMG-20251211-WA0098.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    text-align: left;
+    padding: 20px;
+}
+.hero h2 {
+    color: rgb(230, 214, 163);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+.hero p {
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+    font-size: 1.2rem;
+    margin-top: 10px;
+    text-align: center;
+}
+.section {
+    padding: 20px;
+}
+.about {
+    background-color: #b8b095;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+.food {
+    display: block;
+    margin: 1rem 0;
+}
+.gallery {
+    column-count: 4;
+    column-gap: 10px;
+}
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    margin-bottom: 5px;
+}
+.gallery > * {
+  break-inside: avoid;
+}
+@media (max-width: 1200px) {
+  .gallery {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 400px) {
+  .gallery {
+    column-count: 1;  
+  }
+}
+.image-item {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  overflow: hidden;
+  color: white;
+  position: relative;
+}
+
+.image-item img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px; 
+}
+
+.image-item figcaption {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 23px;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: auto;
+    margin: 0;
+    color: rgb(241, 234, 191);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+    border-radius: 4px;
+}
+@media (max-width: 600px) {
+    .image-item {
+        flex: 100%;
+    }
+    .food {
+        flex-direction: column;
+    }
+    header nav ul {
+        flex-direction: column;
+    } 
+}
